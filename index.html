@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 | تشكيلة التيشيرتات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* --- General Animation --- */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-item {
+      opacity: 0; /* Start hidden */
+      animation: fadeInUp 0.8s ease-out forwards;
+      /* Base animation, delay will be added inline or via specific selectors */
+    }
+    /* --- End General Animation --- */
+
+    :root {
+      --primary-color: #00ffd5;
+      --secondary-color: #1a1a1a;
+      --bg-color: #0a0a0a;
+      --card-bg: #1a1a1a;
+      --text-color: #fff;
+      --text-secondary: #aaa;
+      --border-radius: 12px;
+      --transition: all 0.3s ease;
+      --input-bg: #2a2a2a; /* Added for potential future use, consistent with contact page */
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0, 255, 213, 0.1);
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    /* --- Mobile Menu Button --- */
+    .menu-toggle {
+        display: none; /* Hidden by default */
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    /* --- Mobile Menu Styles --- */
+    .mobile-menu {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0; /* Start from the top */
+        right: -100%; /* Start off-screen */
+        width: 80%; /* Adjust width as needed */
+        max-width: 300px; /* Max width */
+        height: 100vh; /* Full height */
+        background-color: rgba(26, 26, 26, 0.98); /* Slightly transparent dark background */
+        backdrop-filter: blur(15px);
+        padding: 6rem 2rem 2rem; /* Padding top to avoid navbar overlap */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        transition: right 0.4s ease-in-out; /* Smooth transition */
+        z-index: 999; /* Below navbar but above content */
+        text-align: center;
+    }
+
+    .mobile-menu.active {
+        right: 0; /* Slide in */
+        display: flex; /* Use flex for centering */
+        flex-direction: column;
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+    }
+
+    .mobile-nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .mobile-nav-links li {
+        margin-bottom: 2rem; /* Spacing between links */
+    }
+
+    .mobile-nav-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.4rem; /* Larger font size for mobile */
+        font-weight: 600;
+        display: block; /* Make the whole area clickable */
+        transition: var(--transition);
+    }
+
+    .mobile-nav-links a:hover {
+        color: var(--primary-color);
+        transform: scale(1.1);
+    }
+
+    .hero {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('1 (1).jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 0 2rem;
+      margin-top: 60px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      opacity: 0;
+      animation: fadeInHero 1.5s ease-out 0.5s forwards;
+    }
+
+    @keyframes fadeInHero {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 2px solid var(--primary-color);
+    }
+
+    .cta-button:hover {
+      background-color: transparent;
+      color: var(--primary-color);
+    }
+
+    /* New Features Section Styles */
+    .features-section {
+      background-color: var(--secondary-color); /* Slightly different background */
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .features-section h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 3rem;
+    }
+
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-item {
+      background-color: var(--card-bg); /* Use card background */
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+     .feature-item:hover {
+       transform: translateY(-8px);
+       box-shadow: 0 6px 25px rgba(0, 255, 213, 0.15);
+     }
+
+    .feature-item i {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      display: block; /* Ensure icon takes full width for centering */
+    }
+
+    .feature-item h3 {
+      font-size: 1.3rem;
+      color: var(--text-color); /* White text for heading */
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-item p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    /* End of New Features Section Styles */
+
+    .products-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(0, 255, 213, 0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-info h3 {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-info p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .buy-btn:hover {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .footer-section p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      /* Adjust features section for mobile */
+       .features-section h2 {
+         font-size: 2rem;
+         margin-bottom: 2rem;
+       }
+       .features-grid {
+         gap: 1.5rem;
+       }
+       /* End mobile adjustments */
+
+      .products-container {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Style for animated items in features/products */
+    .features-section .feature-item,
+    .products-container .product-card {
+        opacity: 0; /* Start hidden */
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Add staggered delays (adjust timing as needed) */
+    .features-section .feature-item:nth-child(1) { animation-delay: 0.2s; }
+    .features-section .feature-item:nth-child(2) { animation-delay: 0.4s; }
+    .features-section .feature-item:nth-child(3) { animation-delay: 0.6s; }
+
+    .products-container .product-card:nth-child(1) { animation-delay: 0.3s; }
+    .products-container .product-card:nth-child(2) { animation-delay: 0.4s; }
+    .products-container .product-card:nth-child(3) { animation-delay: 0.5s; }
+    .products-container .product-card:nth-child(4) { animation-delay: 0.6s; }
+    .products-container .product-card:nth-child(5) { animation-delay: 0.7s; }
+    .products-container .product-card:nth-child(6) { animation-delay: 0.8s; }
+
+    .custom-design-card {
+      background: linear-gradient(135deg, rgba(0,255,213,0.12) 0%, rgba(26,26,26,0.85) 100%);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      border: 3px solid;
+      border-image: linear-gradient(90deg, #00ffd5, #ffd600, #ff00ff, #00ffd5) 1;
+      box-shadow: 0 8px 40px 0 rgba(0,0,0,0.28), 0 2px 12px rgba(0,255,213,0.10);
+      padding: 2.8rem 1.5rem 2.2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2.2rem;
+      animation: fadeSlideIn 1.1s cubic-bezier(.36,1.5,.56,1) 1;
+      transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+    }
+    .custom-design-card:hover {
+      box-shadow: 0 16px 60px 0 #00ffd555, 0 4px 24px #ffd60055;
+      transform: scale(1.025) translateY(-4px);
+      border-image: linear-gradient(90deg, #ffd600, #00ffd5, #ff00ff, #ffd600) 1;
+    }
+    @keyframes fadeSlideIn {
+      0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .custom-design-card .tshirt-icon {
+      margin-bottom: 1.3rem;
+      transition: fill 0.3s, transform 0.3s;
+      filter: drop-shadow(0 2px 16px #00ffd555);
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35), 0 1.5px 8px rgba(0,0,0,0.10);
+      cursor: pointer;
+      will-change: transform;
+      width: 110px;
+      height: 110px;
+      display: block;
+      background: transparent;
+      border-radius: 22px;
+    }
+    .custom-design-card .tshirt-icon:hover {
+      transform: scale(1.10) rotate(-4deg);
+    }
+    .custom-design-card .tshirt-bounce {
+      animation: tshirt-bounce 0.5s cubic-bezier(.36,1.5,.56,1) 1;
+    }
+    @keyframes tshirt-bounce {
+      0%   { transform: scale(1) translateY(0); }
+      30%  { transform: scale(1.12,0.92) translateY(-8px); }
+      50%  { transform: scale(0.96,1.08) translateY(4px); }
+      70%  { transform: scale(1.04,0.98) translateY(-2px); }
+      100% { transform: scale(1) translateY(0); }
+    }
+    .custom-design-card .subtitle {
+      color: #fff;
+      font-size: 1.13rem;
+      margin-bottom: 0.8rem;
+      opacity: 0.92;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 8px #0005;
+    }
+    .custom-design-card .color-bar-label {
+      color: #fff;
+      font-size: 1.01rem;
+      margin-bottom: 0.4rem;
+      opacity: 0.85;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+    .custom-design-card .color-bar-gradient {
+      width: 200px;
+      height: 32px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 1px 8px #00ffd522;
+      border: 2.5px solid #fff;
+      margin: 0 auto 1.1rem auto;
+      display: block;
+    }
+    .custom-design-card .color-bar-indicator {
+      position: absolute;
+      top: -18px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 3px solid #ffd600;
+      box-shadow: 0 0 0 3px #ffd60044;
+      pointer-events: none;
+      transition: left 0.2s, background 0.2s;
+      z-index: 2;
+    }
+    .custom-design-card .product-info {
+      text-align: center;
+      margin-top: 1.2rem;
+    }
+    .custom-design-card .product-info h3 {
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 8px #0005;
+    }
+    .custom-design-card .product-info p {
+      color: #fff;
+      opacity: 0.93;
+      font-size: 1.08rem;
+      margin-bottom: 1.1rem;
+      font-weight: 400;
+      text-shadow: 0 1px 8px #0005;
+    }
+    .custom-design-card .buy-btn {
+      display: inline-block;
+      padding: 1.1rem 2.5rem;
+      background: linear-gradient(90deg, #00ffd5 0%, #ffd600 100%);
+      color: #222;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 1.13rem;
+      border: none;
+      margin-top: 0.5rem;
+      box-shadow: 0 2px 18px #00ffd555, 0 1.5px 8px #ffd60055;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .custom-design-card .buy-btn:hover {
+      background: linear-gradient(90deg, #ffd600 0%, #00ffd5 100%);
+      color: #111;
+      box-shadow: 0 4px 28px #00ffd555, 0 2px 12px #ffd60055;
+      transform: scale(1.06);
+    }
+
+    .more-products-btn {
+      display: inline-block;
+      padding: 1.1rem 3.2rem;
+      background: linear-gradient(90deg, #00ffd5 0%, #ffd600 100%);
+      color: #222;
+      border-radius: 32px;
+      font-weight: 800;
+      font-size: 1.18rem;
+      border: none;
+      box-shadow: 0 2px 18px #00ffd555, 0 1.5px 8px #ffd60055;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+    .more-products-btn:hover {
+      background: linear-gradient(90deg, #ffd600 0%, #00ffd5 100%);
+      color: #111;
+      box-shadow: 0 4px 28px #00ffd555, 0 2px 12px #ffd60055;
+      transform: scale(1.06);
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="logo">404</a>
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="about.html">عن الشركة</a>
+        <a href="contact.html">اتصل بنا</a>
+      </div>
+      <!-- Mobile Menu Toggle Button -->
+      <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu-container">
+    <ul class="mobile-nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+        <li><a href="about.html">عن الشركة</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>404</h1>
+      <p>تشكيلة تيشيرتات فريدة من نوعها لعشاق التميز والستايل</p>
+      <a href="#products" class="cta-button">اكتشف المجموعة</a>
+    </div>
+  </section>
+
+  <!-- New Features Section -->
+  <section class="features-section">
+    <h2>لماذا تختار 404؟</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <i class="fas fa-palette"></i>
+        <h3>تصاميم فريدة</h3>
+        <p>تقدر نصمم ديزاينك الخاص</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-tshirt"></i>
+        <h3>جودة عالية</h3>
+        <p>نستخدم أجود أنواع القطن المريح وتقنيات طباعة متقدمة تدوم طويلاً.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-percent" style="color: #00ffd5;"></i>
+        <h3>خصومات على الكميات</h3>
+        <p>لو عندك ايفنت او حفلة تقدر تشترى اى كمية</p>
+      </div>
+    </div>
+  </section>
+  <!-- End of New Features Section -->
+
+  <section id="products" class="products-container">
+    <!-- Add a heading for the products section -->
+    <h2 class="animated-item" style="animation-delay: 0.1s; grid-column: 1 / -1; text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 3rem;">
+      اكتشف مجموعتنا
+    </h2>
+
+    <div class="product-card custom-design-card">
+      <svg id="custom-tshirt-icon" class="tshirt-icon" width="110" height="110" viewBox="0 0 64 64" fill="#00ffd5" xmlns="http://www.w3.org/2000/svg">
+        <g id="tshirt-body">
+          <path d="M12 8 L32 2 L52 8 L56 20 Q54 22 50 20 L50 54 Q50 58 46 58 L18 58 Q14 58 14 54 L14 20 Q10 22 8 20 Z"/>
+        </g>
+        <g id="tshirt-collar">
+          <ellipse cx="32" cy="12" rx="8" ry="4" fill="#fff" fill-opacity="0.7"/>
+        </g>
+        <g id="tshirt-shadow">
+          <path d="M32 2 L52 8 L56 20 Q54 22 50 20 L50 54 Q50 58 46 58 L32 58 Z" fill="#000" fill-opacity="0.07"/>
+        </g>
+      </svg>
+      <div class="subtitle" style="margin-bottom: 20px;">اختَر لون التيشيرت وجرب تصميمك الخاص!</div>
+      
+      <div style="position: relative; height: 32px; width: 200px; margin: 0 auto;">
+        <div id="color-bar-indicator" class="color-bar-indicator" style="left: 0; background: #00ffd5;"></div>
+        <div id="color-bar-gradient" class="color-bar-gradient"></div>
+      </div>
+      <div class="product-info">
+        <h3>صمّم تيشيرتك الخاص</h3>
+        <p>حابب ديزاينك يكون فريد؟ اطلب تيشيرتك بتصميمك الخاص الآن!</p>
+        <a href="https://www.instagram.com/direct/t/17848019931414505" target="_blank" class="buy-btn">اطلب تصميمك الخاص</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="1 (1).jpeg" alt="تيشيرت 1">
+      <div class="product-info">
+        <h3>تيشيرت نيون دارك</h3>
+        <a href="https://www.instagram.com/direct/t/17848019931414505" target="_blank" class="buy-btn">اشترِ الآن</a>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <img src="1 (2).jpeg" alt="تيشيرت 2">
+      <div class="product-info">
+        <h3>تيشيرت كود خربان</h3>
+        <a href="https://www.instagram.com/direct/t/17848019931414505" target="_blank" class="buy-btn">اشترِ الآن</a>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <img src="1 (3).jpeg" alt="تيشيرت 3">
+      <div class="product-info">
+        <h3>تيشيرت 404 كلاسيك</h3>
+        <a href="https://www.instagram.com/direct/t/17848019931414505" target="_blank" class="buy-btn">اشترِ الآن</a>
+      </div>
+    </div>
+  
+    
+  </section>
+  
+  <!-- Add this after the products-container section -->
+  <div style="width: 100%; display: flex; justify-content: center; margin: 2.5rem 0 0 0;">
+    <a href="products.html" class="more-products-btn">اطلع على المزيد</a>
+  </div>
+
+  <footer class="animated-item" style="animation-delay: 0.5s;">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>404</h3>
+        <p>براند مصري للشارع العالمي، نقدم تشكيلة فريدة من التيشيرتات بتصميمات مبتكرة.</p>
+        <h3> + خدمة توصيل لجميع المحافظات</h3>
+      </div>
+      <div class="footer-section">
+        <h3>روابط سريعة</h3>
+        <a href="index.html" style="color: var(--text-secondary); text-decoration: none; display: block; margin-bottom: 0.5rem;">الرئيسية</a>
+        <a href="products.html" style="color: var(--text-secondary); text-decoration: none; display: block; margin-bottom: 0.5rem;">المنتجات</a>
+        <a href="about.html" style="color: var(--text-secondary); text-decoration: none; display: block; margin-bottom: 0.5rem;">عن الشركة</a>
+        <a href="contact.html" style="color: var(--text-secondary); text-decoration: none; display: block; margin-bottom: 0.5rem;">اتصل بنا</a>
+      </div>
+      <div class="footer-section">
+        <h3>اتصل بنا</h3>
+        <div class="social-links">
+         
+          <a href="https://www.instagram.com/404_eg?igsh=MWdoeGE0ZjJ1dHhkNQ=="><i class="fab fa-instagram"></i></a>
+          
+        </div>
+        
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 404 - جميع الحقوق محفوظة
+    </div>
+  </footer>
+
+  <script>
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const mobileMenu = document.getElementById('mobile-menu-container');
+    const menuIcon = menuToggleBtn.querySelector('i'); // Get the icon element
+
+    menuToggleBtn.addEventListener('click', () => {
+      const isActive = mobileMenu.classList.toggle('active');
+      // Change icon based on menu state
+      if (isActive) {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-times'); // Change to close icon
+          // Optional: Prevent body scroll when menu is open
+          // document.body.style.overflow = 'hidden';
+      } else {
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars'); // Change back to hamburger icon
+          // Optional: Restore body scroll
+          // document.body.style.overflow = '';
+      }
+    });
+
+    // Optional: Close menu if a link is clicked
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            // document.body.style.overflow = ''; // Restore scroll
+        });
+    });
+
+    // Optional: Close menu if clicked outside
+    document.addEventListener('click', (event) => {
+        // Check if the click is outside the menu and the toggle button
+        if (!mobileMenu.contains(event.target) && !menuToggleBtn.contains(event.target) && mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            // document.body.style.overflow = ''; // Restore scroll
+        }
+    });
+
+    // T-shirt color bar gradient logic + bounce animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const tshirtIcon = document.getElementById('custom-tshirt-icon');
+      const colorBar = document.getElementById('color-bar-gradient');
+      const indicator = document.getElementById('color-bar-indicator');
+      // Create a canvas to get color from gradient
+      const canvas = document.createElement('canvas');
+      canvas.width = colorBar.offsetWidth;
+      canvas.height = colorBar.offsetHeight;
+      const ctx = canvas.getContext('2d');
+      // Draw the same gradient as the bar
+      const grad = ctx.createLinearGradient(0, 0, canvas.width, 0);
+      grad.addColorStop(0,   '#ff0000');
+      grad.addColorStop(0.17,'#ffff00');
+      grad.addColorStop(0.33,'#00ff00');
+      grad.addColorStop(0.50,'#00ffff');
+      grad.addColorStop(0.67,'#0000ff');
+      grad.addColorStop(0.83,'#ff00ff');
+      grad.addColorStop(1,   '#ff0000');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Helper to get color at x
+      function getColorAt(x) {
+        const data = ctx.getImageData(x, canvas.height/2, 1, 1).data;
+        return `rgb(${data[0]},${data[1]},${data[2]})`;
+      }
+      // Set initial color
+      let currentX = Math.round(canvas.width * 0.2);
+      function setColor(x) {
+        x = Math.max(0, Math.min(canvas.width-1, x));
+        const color = getColorAt(x);
+        tshirtIcon.setAttribute('fill', color);
+        indicator.style.left = (x-14) + 'px';
+        indicator.style.background = color;
+        currentX = x;
+        // Bounce animation
+        tshirtIcon.classList.remove('tshirt-bounce');
+        void tshirtIcon.offsetWidth; // force reflow
+        tshirtIcon.classList.add('tshirt-bounce');
+      }
+      setColor(currentX);
+      colorBar.addEventListener('click', function(e) {
+        const rect = colorBar.getBoundingClientRect();
+        const x = Math.round((e.clientX - rect.left) * (canvas.width / rect.width));
+        setColor(x);
+      });
+      // Optional: drag to pick color
+      let dragging = false;
+      colorBar.addEventListener('mousedown', function(e) {
+        dragging = true;
+      });
+      document.addEventListener('mouseup', function() { dragging = false; });
+      colorBar.addEventListener('mousemove', function(e) {
+        if (!dragging) return;
+        const rect = colorBar.getBoundingClientRect();
+        const x = Math.round((e.clientX - rect.left) * (canvas.width / rect.width));
+        setColor(x);
+      });
+      // Touch support
+      colorBar.addEventListener('touchstart', function(e) { dragging = true; });
+      colorBar.addEventListener('touchend', function(e) { dragging = false; });
+      colorBar.addEventListener('touchmove', function(e) {
+        if (!dragging) return;
+        const rect = colorBar.getBoundingClientRect();
+        const touch = e.touches[0];
+        const x = Math.round((touch.clientX - rect.left) * (canvas.width / rect.width));
+        setColor(x);
+      });
+    });
+
+  </script>
+</body>
+</html>
